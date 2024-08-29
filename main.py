@@ -2,7 +2,6 @@ def custom_sum(a, b, c):
     return a + b + c
 
 def print_board(x_state, o_state):
-    """Displays the current state of the Tic-Tac-Toe board."""
     board = []
     for i in range(9):
         if x_state[i]:
@@ -18,7 +17,6 @@ def print_board(x_state, o_state):
     print(f" {board[6]} | {board[7]} | {board[8]} \n")
 
 def check_win(state):
-    """Checks if a player has won the game."""
     win_combinations = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Rows
         [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Columns
@@ -30,11 +28,9 @@ def check_win(state):
     return False
 
 def is_draw(x_state, o_state):
-    """Checks if the game is a draw."""
     return sum(x_state) + sum(o_state) == 9
 
 def get_valid_input(occupied):
-    """Prompts the user for a valid move."""
     while True:
         try:
             value = int(input("Please enter a value (0-8): "))
@@ -48,7 +44,6 @@ def get_valid_input(occupied):
             print("Invalid input. Please enter a number between 0 and 8.")
 
 def play_game():
-    """Main function to play the Tic-Tac-Toe game."""
     x_state = [0] * 9
     o_state = [0] * 9
     turn = 1  # 1 for X, 0 for O
